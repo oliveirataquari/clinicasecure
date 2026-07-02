@@ -356,7 +356,7 @@ h6 {
   }
 }
 
-/* Navmenu - Mobile */
+/* Navmenu - Mobile  */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
