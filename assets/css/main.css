@@ -237,8 +237,12 @@ h6 {
 }
 .btn-getstarted i {
   margin-right: 6px;
+  /* color:#fff; */
 }
-
+.btn-getstarted:hover {
+  background:#01BA18;
+  color:#000;
+}
 
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
