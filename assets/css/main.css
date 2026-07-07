@@ -1222,13 +1222,20 @@ section,
   .hero-video .scroll-indicator {
       position: absolute;
       left: 50%;
-      bottom: 32px;
+      bottom: 18px;
       transform: translateX(-50%);
       z-index: 10;
       color: var(--verde-claro-color);
       font-size: 2.5rem;
       transition: .3s;
       animation: scrollBounce 2s infinite;
+      /* background-color: var(--verde-claro-color);
+      color:white;
+      border-radius: 45px;
+      height: 45px;
+      width: 45px;
+      text-align: center;
+      padding-top: 2px; */
   }
   .hero-video .scroll-indicator:hover{
       color:#fff;
