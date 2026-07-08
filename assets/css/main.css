@@ -1316,7 +1316,7 @@ section,
 .hero .hero-content p {
   font-size: 1.125rem;
   line-height: 1.7;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 @media (max-width: 768px) {
@@ -1382,7 +1382,7 @@ section,
 }
 
 .hero .hero-stats {
-  display: flex;
+/*  display: flex;  */
   gap: 3rem;
   margin-top: 2rem;
 }
@@ -1391,8 +1391,8 @@ section,
 @media (max-width: 768px) {
   .hero .hero-stats {
     gap: 1.5rem;
-    display: flex;
-    flex-wrap: nowrap; /* Impede os itens de pularem para a linha de baixo */
+/*    display: flex; */
+    /* flex-wrap: nowrap; /* Impede os itens de pularem para a linha de baixo */
     text-align: center;
   }
 }
@@ -1400,9 +1400,9 @@ section,
 /* Modificado para telas de celulares */
 @media (max-width: 576px) {
   .hero .hero-stats {
-    display: flex;
-    flex-direction: row; /* Força os elementos a continuarem lado a lado */
-    flex-wrap: nowrap;    /* Garante linha única */
+ /*   display: flex; */
+  /*  flex-direction: column;  Força os elementos a continuarem lado a lado */
+   /* flex-wrap: nowrap;     Garante linha única */
     gap: 0.5rem;         /* Diminui o espaçamento para caber em telas pequenas */
     justify-content: space-between;
   }
@@ -1419,7 +1419,7 @@ section,
 
 .hero .hero-stats .stat-item .stat-number {
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 800;
   color: var(--accent-color);
   margin-bottom: 0.25rem;
 }
@@ -4801,47 +4801,6 @@ section,
   justify-content: center;  
 }
 
-/* Criando a película escura */
-.background-img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Altere o 0.6 para controlar a opacidade (0 = transparente, 1 = totalmente preto) */
-  background-color: rgba(0, 0, 0, 0.1); 
-  z-index: 1;
-}
-
-/* Garante que o conteúdo do container fique por cima da película */
-.background-img .container {
-  position: relative;
-  z-index: 2;
-}
-
-@media (max-width: 768px) {
-  .background-img {
-    min-height: 300px;
-    background-position-x: -400px; /* Dica: background-position: -500px center; seria mais seguro aqui */
-    background-position-y: -100px;
-  }
-}
-
-.background-img h2 {
-  font-size: 2.8rem;
-  font-weight: 300;
-  line-height: 1.2;
-  color: #fff;
-  margin-bottom: 1.5rem;
-  letter-spacing: -1px;
-}
-@media (max-width: 768px) {
-  .background-img h2 {
-    font-size: 1.8rem;
-  }  
-}
-
 
 .map {
   padding-bottom: 0px; margin-bottom: -10px; padding-top: 120px
@@ -4859,5 +4818,16 @@ section,
 }
   */
 
+.sufixo {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 4px;
+  font-size: 2rem;
+  color: var(--heading-color);
+}
 
 
+p {
+  
+}
