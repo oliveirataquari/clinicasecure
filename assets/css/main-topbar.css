@@ -100,11 +100,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-h1,h2 {
-  font-weight: bold !important;
-}
-
-
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -171,6 +166,56 @@ h1,h2 {
   z-index: 997;
 }
 
+.header .topbar {
+  background-color: var(--background-color);
+  background-color: #20416A;
+  height: 50px;
+  padding: 0;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.header .topbar .contact-info i {
+  font-style: normal;
+  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+}
+
+.header .topbar .contact-info i a,
+.header .topbar .contact-info i span {
+  padding-left: 5px;
+  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+}
+
+@media (max-width: 575px) {
+
+  .header .topbar .contact-info i a,
+  .header .topbar .contact-info i span {
+    font-size: 13px;
+  }
+}
+
+.header .topbar .contact-info i a {
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.header .topbar .contact-info i a:hover {
+  color: var(--contrast-color);
+  text-decoration: underline;
+}
+
+.header .topbar .social-links a {
+  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+  line-height: 0;
+  transition: 0.3s;
+  margin-left: 20px;
+}
+
+.header .topbar .social-links a:hover {
+  color: var(--contrast-color);
+}
+
+
 .header .logo {
   line-height: 1;
 }
@@ -206,6 +251,13 @@ h1,h2 {
   -webkit-backdrop-filter: blur(10px);
   pointer-events: none;
   z-index: -1;
+}
+
+.scrolled .header .topbar {
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 0;
 }
 
 .header .copyright {
