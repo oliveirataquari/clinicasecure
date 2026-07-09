@@ -165,8 +165,8 @@
       }
     });
   }
-
   window.addEventListener("load", initSwiper);
+
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
@@ -196,7 +196,36 @@
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
+
   
+
+  /**
+   * Galeria de imagens carousel (Add Tiago)
+   */
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".myGallerySwiper", {
+      loop: true,
+      speed: 700,
+      autoplay: {
+        delay: 3000,
+      },
+      slidesPerView: 1,
+      spaceBetween: 20,
+
+      navigation: {
+        nextEl: ".gallery-next",
+        prevEl: ".gallery-prev",
+      },
+
+      breakpoints: {
+        768: {
+          slidesPerView: 1 /* Numero de slides na tela */
+        }
+      }
+    });
+  });
+
+
 
 
   /**
@@ -222,3 +251,4 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+

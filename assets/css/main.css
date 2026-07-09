@@ -1288,7 +1288,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   padding: 120px 0 100px;
-  padding-bottom: 0px;
+  /* padding-bottom: 0px; */
   position: relative;
   overflow: hidden;
   background-color: #fff;
@@ -1382,32 +1382,21 @@ section,
 }
 
 .hero .hero-stats {
-/*  display: flex;  */
+  display: flex;
   gap: 3rem;
   margin-top: 2rem;
 }
 
 /* Modificado para telas de tablets (ajusta o gap sem quebrar) */
-@media (max-width: 768px) {
+@media(max-width:768px) {
   .hero .hero-stats {
     gap: 1.5rem;
-/*    display: flex; */
-    /* flex-wrap: nowrap; /* Impede os itens de pularem para a linha de baixo */
+    display: block;
+    flex-wrap: nowrap; /* Impede os itens de pularem para a linha de baixo */
     text-align: center;
-  }
-}
-
-/* Modificado para telas de celulares */
-@media (max-width: 576px) {
-  .hero .hero-stats {
- /*   display: flex; */
-  /*  flex-direction: column;  Força os elementos a continuarem lado a lado */
-   /* flex-wrap: nowrap;     Garante linha única */
-    gap: 0.5rem;         /* Diminui o espaçamento para caber em telas pequenas */
+    gap: 0.5rem;
     justify-content: space-between;
   }
-
-  /* Reduz sutilmente os tamanhos para caber tudo sem quebras feias */
   .hero .hero-stats .stat-item .stat-number {
     font-size: 1.5rem;   
   }
@@ -1417,6 +1406,7 @@ section,
   }
 }
 
+
 .hero .hero-stats .stat-item .stat-number {
   font-size: 2rem;
   font-weight: 800;
@@ -1425,32 +1415,33 @@ section,
 }
 
 .hero .hero-stats .stat-item .stat-label {
-  font-size: 0.875rem;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-size: 1rem;
+  color: var(--verde-color);
   font-weight: 500;
 }
 
 .hero .hero-image {
-  position: relative;
+ position: relative; 
 }
 
 .hero .hero-image img {
-  /* border-radius: 12px;
-  box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%); */
+  border-radius: 12px;
+  box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%); 
 }
 
-.hero .hero-image .floating-card {
+.hero .floating-card {
   position: absolute;
-  bottom: 20px;
+  bottom: -20px;
   left: 20px;
   background: var(--surface-color);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 10px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 10px 40px color-mix(in srgb, var(--default-color), transparent 60%);
   display: flex;
   align-items: center;
   gap: 1rem;
   min-width: 200px;
+  z-index: 99;
 }
 
 @media (max-width: 768px) {
@@ -1462,7 +1453,7 @@ section,
   }
 }
 
-.hero .hero-image .floating-card .card-icon {
+.hero .floating-card .card-icon {
   width: 50px;
   height: 50px;
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
@@ -1472,19 +1463,19 @@ section,
   justify-content: center;
 }
 
-.hero .hero-image .floating-card .card-icon i {
+.hero .floating-card .card-icon i {
   font-size: 1.5rem;
   color: var(--accent-color);
 }
 
-.hero .hero-image .floating-card .card-content h5 {
+.hero  .floating-card .card-content h5 {
   font-size: 0.875rem;
   font-weight: 600;
   margin: 0 0 0.25rem 0;
   color: var(--heading-color);
 }
 
-.hero .hero-image .floating-card .card-content .growth-percentage {
+.hero .floating-card .card-content .growth-percentage {
   font-size: 1.25rem;
   font-weight: 700;
   color: #22c55e;
@@ -4831,3 +4822,8 @@ section,
 p {
   
 }
+
+
+
+
+
