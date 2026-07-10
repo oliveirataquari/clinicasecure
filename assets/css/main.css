@@ -1287,7 +1287,7 @@ section,
 # Hero Section (original)
 --------------------------------------------------------------*/
 .hero {
-  padding: 120px 0 100px;
+  padding: 100px 0;
   /* padding-bottom: 0px; */
   position: relative;
   overflow: hidden;
@@ -1425,8 +1425,8 @@ section,
 }
 
 .hero .hero-image img {
-  border-radius: 12px;
-  box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%); 
+ /* border-radius: 12px;
+  box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%); */
 }
 
 .hero .floating-card {
