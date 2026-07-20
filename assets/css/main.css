@@ -1287,7 +1287,7 @@ section,
 # Hero Section (original)
 --------------------------------------------------------------*/
 .hero {
-  padding: 40px 0 140px;
+  /* padding: 40px 0 140px; */
   /* padding-bottom: 0px; */
   position: relative;
   overflow: hidden;
@@ -1532,6 +1532,21 @@ section,
   color:#fff
 }
 
+.hero .swiper-slide .gallery-item {
+  aspect-ratio: 5/4; /* Aqui recorta a imagem */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.hero .swiper-slide .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px; /* pode remover daqui já que o container já corta */
+}
+
+
 
 
 
@@ -1735,9 +1750,9 @@ section,
 .services {
   /* background-color: color-mix(in srgb, var(--background-color), var(--accent-color) 2%);
   background-color: #222; */
-  background: radial-gradient(circle, var(--verde-color) 0%, #111 100%);
-  padding-top: 0px;
-  padding-bottom: 120px;
+  /* background: radial-gradient(circle, var(--verde-color) 0%, #111 100%); */
+  background-color: var(--verde-color);
+  padding: 100px 0;
 }
 
 @media (max-width: 768px) {
@@ -1774,9 +1789,10 @@ section,
   opacity: .4;
 }
 
+/* Somente desktop */
 @media (min-width: 768px) {
   .services .quatro-itens {
-    margin-top:-140px;
+    /* margin-top:-140px; */
   }
 }
 
@@ -1831,7 +1847,8 @@ section,
 .services .service-item .service-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+  /* background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%)); */
+  background-color: var(--verde-claro-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1888,6 +1905,7 @@ section,
 @media (max-width: 768px) {
   .services .service-item {
     padding: 20px;
+    margin-right: -10px;
   }
 
   .services .service-item .service-icon {
@@ -5250,3 +5268,7 @@ p {
 }
 
 
+/* Galeria Gallery */
+.gslide-image img {
+  border-radius: 10px;
+}
