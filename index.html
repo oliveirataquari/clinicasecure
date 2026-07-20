@@ -133,7 +133,7 @@
                 <a href="#https://www.youtube.com/watch?v=" class="btn-secondary glightbox"><i class="bi bi-play-circle"></i>Veja nosso vídeo</a>
               </div>
 
-              <div class="row hero-stats g-4" data-aos="fade-up" data-aos-delay="500">
+              <div class="row hero-stats g-4 hide" data-aos="fade-up" data-aos-delay="500">
 
                 <div class="col-6 col-lg-3 hide">
                   <div class="stat-item">
@@ -179,24 +179,80 @@
 
               </div>
 
+              <!-- Stats usado no site -->
+              <div class="stats-row">
+                <div class="stat-item">
+                  <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="12"
+                    data-purecounter-duration="1"></div>
+                  <div class="stat-label">Anos de experiência</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="15"
+                    data-purecounter-duration="1"></div>
+                  <div class="stat-label">Salas de atendimento</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="17"
+                    data-purecounter-duration="1"></div>
+                  <div class="stat-label">Especialidades Médicas</div>
+                </div>
+              </div>
+
             </div>
           </div>
 
           <!-- <div class="col-lg-6 d-flex align-items-end p-0 order-1 order-lg-2"> -->
-          <div class="col-lg-6 d-flex p-0 order-1 order-lg-2 align-items-center">
-            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
-              <img src="assets/img/img-home1.webp" alt="Business Success" class="img-fluid">
+          <div class="col-lg-6 d-flex pb-5 order-1 order-lg-2 align-items-center">
 
-              <div class="floating-card hide" data-aos="zoom-in" data-aos-delay="600">
-                <div class="card-icon">
-                  <i class="bi bi-graph-up-arrow"></i>
+              <!-- GALERIA DE IMAGENS -->
+              
+              <div class="gallery-carousel swiper myGallerySwiper">
+
+                <div class="swiper-wrapper">
+
+                  <!-- Slide -->
+                  <div class="swiper-slide">
+                    <div class="gallery-item">
+                      <img src="assets/img/gallery/gallery-01.jpg" class="img-fluid" alt="">
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="gallery-item">
+                      <img src="assets/img/gallery/gallery-02.jpg" class="img-fluid" alt="">
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="gallery-item">
+                      <img src="assets/img/gallery/gallery-03.jpg" class="img-fluid" alt="">
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="gallery-item">
+                      <img src="assets/img/gallery/gallery-04.jpg" class="img-fluid" alt="">
+                    </div>
+                  </div>
+
+                  <!-- adiciona quantas quiser -->
+
                 </div>
-                <div class="card-content">
-                  <h5>Revenue Growth</h5>
-                  <div class="growth-percentage">+45%</div>
+
+                <!-- Arrows -->
+                <div class="swiper-button-next gallery-next"></div>
+                <div class="swiper-button-prev gallery-prev"></div>
+
+                <div class="floating-card hide" data-aos="zoom-in" data-aos-delay="600">
+                  <div class="card-content">
+                    <h5><i class="bi bi-images"></i> Veja mais fotos</h5>
+                  </div>
                 </div>
+
               </div>
-            </div>
+              <!-- FIM GALERIA-->
+
+
           </div>
 
         </div>
@@ -259,6 +315,7 @@
           </div>
 
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+          
             <div class="image-wrapper">
               <img src="assets/img/about/about-square-12.webp" alt="About us" class="img-fluid">
               <div class="floating-card" data-aos="zoom-in" data-aos-delay="500">
@@ -273,7 +330,9 @@
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
 
       </div>
@@ -286,7 +345,7 @@
     <section id="services" class="services section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title hide" data-aos="fade-up">
         <span class="subtitle">Especialidades</span>
         <h2>Diversas especialidades reunidas em um só lugar.</h2>
         <!-- <p>Mais de 10 especialidades médicas e um corpo clínico de excelência para cuidar da sua saúde</p> -->
@@ -294,15 +353,15 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <div class="row gy-4 quatro-itens" >
 
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item">
               <div class="service-icon">
-                <i class="bi bi-people"></i>
+                <i class="bi bi-file-earmark-medical"></i>
               </div>
-              <h3>Angiologia / Vascular</h3>
-              <p>Tratamento das doenças do aparelho circulatório.</p>
+              <h3>Especialidades</h3>
+              <p>Mais de 15 especialidades médicas e um corpo clínico de excelência para cuidar da sua saúde.</p>
               <a href="service-details.html" class="service-link">
                 Saiba mais <i class="bi bi-arrow-right"></i>
               </a>
@@ -312,10 +371,10 @@
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item">
               <div class="service-icon">
-                <i class="bi bi-briefcase"></i>
+                <i class="bi bi-heart-pulse"></i>
               </div>
-              <h3>Direito Trabalhista</h3>
-              <p>Defesa de empregados e empregadores em demandas trabalhistas.</p>
+              <h3>Exames</h3>
+              <p>Exames laboratoriais, cardiológicos, de imagem e trabalhistas realizados com tecnologia e agilidade.</p>
               <a href="service-details.html" class="service-link">
                 Saiba mais <i class="bi bi-arrow-right"></i>
               </a>
@@ -325,49 +384,23 @@
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item">
               <div class="service-icon">
-                <i class="bi bi-umbrella"></i>
+                <i class="bi bi-prescription2"></i>
               </div>
-              <h3>Direito Previdenciário</h3>
-              <p>Aposentadorias, benefícios e revisões junto ao INSS.</p>
+              <h3>Procedimentos</h3>
+              <p>Procedimentos de baixa e média complexidade com tranquilidade, segurança e estrutura completa.</p>
               <a href="service-details.html" class="service-link">
                 Saiba mais <i class="bi bi-arrow-right"></i>
               </a>
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item">
               <div class="service-icon">
-                <i class="bi bi-building"></i>
+                <i class="bi bi-cup-hot"></i>
               </div>
-              <h3>Direito Empresarial</h3>
-              <p>Assessoria jurídica preventiva e consultiva para empresas.</p>
-              <a href="service-details.html" class="service-link">
-                Saiba mais <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-house-heart"></i>
-              </div>
-              <h3>Direito de Família</h3>
-              <p>Divórcio, guarda, pensão alimentícia e inventários.</p>
-              <a href="service-details.html" class="service-link">
-                Saiba mais <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-cart-check"></i>
-              </div>
-              <h3>Direito do Consumidor</h3>
-              <p>Defesa dos direitos do consumidor em situações de abuso ou prejuízo.</p>
+              <h3>Conveniências</h3>
+              <p>Banco, cafeteria, estacionamento, e outros, para facilitar sua rotina proporcionando bem-estar.</p>
               <a href="service-details.html" class="service-link">
                 Saiba mais <i class="bi bi-arrow-right"></i>
               </a>
