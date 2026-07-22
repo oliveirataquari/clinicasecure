@@ -189,6 +189,16 @@
 
 
   /**
+   * Comportamento do Menu ao rolar a tela
+   */
+  const header = document.getElementById('header');
+
+  window.addEventListener('scroll', function () {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+
+  /**
    * Frequently Asked Questions Toggle
    */
   document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {

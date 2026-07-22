@@ -176,7 +176,7 @@ h1,h2 {
 }
 
 .header .logo img {
-  max-height: 32px;
+  max-height: 44px;
   margin-right: 8px;
 }
 
@@ -187,6 +187,31 @@ h1,h2 {
   color:#fff;
   transition: all 0.5s ease;
 }
+
+
+/* Troca logo ao scrolled */
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.logo-img {
+  transition: opacity 0.3s ease;
+}
+/* A colorida começa invisível, sobreposta em cima da branca */
+.logo-colorido {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+/* Quando o header rola, inverte: branca some, colorida aparece */
+.header.scrolled .logo-branco {
+  opacity: 0;
+}
+.header.scrolled .logo-colorido {
+  opacity: 1;
+}
+
 
 .scrolled .header .logo h1 {
   color:#000;
@@ -820,7 +845,7 @@ section,
 
 .section-title h2 {
   font-size: 2.8rem;
-  font-weight: 300;
+  /* font-weight: 300; */
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1.5rem;
@@ -1398,7 +1423,7 @@ section,
     justify-content: space-between;
   }
   .hero .hero-stats .stat-item .stat-number {
-    font-size: 1.5rem;   
+    font-size: 1.5rem;
   }
   .hero .hero-stats .stat-item .stat-label {
     font-size: 0.75rem;  
@@ -1435,8 +1460,8 @@ section,
 }
 
 .hero .stats-row .stat-item .stat-number {
-  font-size: 48px;
-  font-weight: 300;
+  font-size: 36px;
+  font-weight: 600;
   line-height: 1;
   color: var(--accent-color);
   font-family: var(--heading-font);
@@ -1768,7 +1793,6 @@ section,
 
 .services .section-title h2 {
   color:#fff;
-  opacity: .8;
 }
 
 .services .section-title .subtitle {
@@ -1781,7 +1805,6 @@ section,
 
 .services h2 {
   color:#fff;
-  /* opacity: .95; */
 }
 .services p {
   color:#fff;
