@@ -37,6 +37,8 @@
   --red-color: #D32C2E;
   --verde-color: #094F07;
   --verde-claro-color: #01DF1A;
+  --cinza-color: #A7A6A9;
+  
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -844,14 +846,17 @@ section,
 }
 
 .section-title h2 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   /* font-weight: 300; */
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
 }
-
+.section-title h2 span {
+  color: var(--cinza-color);
+  font-size: 1.8rem;
+}
 @media (max-width: 768px) {
   .section-title h2 {
     font-size: 2rem;
@@ -1775,13 +1780,14 @@ section,
   /* background-color: color-mix(in srgb, var(--background-color), var(--accent-color) 2%);
   background-color: #222; */
   /* background: radial-gradient(circle, var(--verde-color) 0%, #111 100%); */
-  background-color: var(--verde-color);
+  background: var(--verde-color) url("../img/bg-estrutura1.png") no-repeat top left;
   padding: 100px 0;
 }
 
 @media (max-width: 768px) {
   .services {
     padding-top: 100px;
+    background-size: 150%;
   }
 }
 
@@ -1870,7 +1876,7 @@ section,
   width: 70px;
   height: 70px;
   /* background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%)); */
-  background-color: var(--verde-claro-color);
+  background-color: var(--cinza-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1949,6 +1955,98 @@ section,
     margin-bottom: 24px;
   }
 }
+
+
+
+
+
+/*--------------------------------------------------------------
+# Clients Section (Convênios)
+--------------------------------------------------------------*/
+.convenios {
+  background-color: var(--verde-color);
+  color: #fff;
+  padding: 100px 0;
+  padding-top: 1px;
+}
+
+.convenios .swiper-slide img {
+  opacity: 0.8;
+  /* transition: 0.3s;
+  filter: grayscale(100); */
+}
+
+.convenios .swiper-slide img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+.convenios .swiper-wrapper {
+  height: auto;
+}
+
+.convenios .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.convenios .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.convenios .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.convenios {
+  scroll-margin-top: 87px;
+}
+.convenios h4 {
+  color: var(--cinza-color);
+  padding-bottom: 10px;
+}
+.convenios {
+  position: relative; /* necessário para os pseudo-elementos se posicionarem */
+}
+
+.convenios .swiper {
+  position: relative;
+  overflow: hidden;
+}
+
+.convenios .swiper::before,
+.convenios .swiper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px; /* ajuste a largura do "fade" */
+  z-index: 2;
+  pointer-events: none; /* para não bloquear cliques/drag no carousel */
+}
+
+.convenios .swiper::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--verde-color) 0%,      /* cor sólida igual ao fundo */
+    rgba(10, 61, 26, 0) 100%
+  );
+}
+
+.convenios .swiper::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--verde-color) 0%,
+    rgba(10, 61, 26, 0) 100%
+  );
+}
+
+
 
 
 /*--------------------------------------------------------------
@@ -2692,6 +2790,10 @@ section,
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
+.faq {
+    background: url("../img/bg-faq1.png") no-repeat top left;
+}
+
 .faq .faq-item {
   margin-bottom: 0;
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -2712,34 +2814,52 @@ section,
 }
 
 .faq .faq-item.faq-active .faq-header .faq-toggle {
-  color: var(--accent-color);
   transform: rotate(0deg);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--verde-color);
 }
 
 .faq .faq-item.faq-active .faq-header .faq-toggle i.bi-plus {
   opacity: 0;
   transform: rotate(90deg);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--verde-color);
 }
 
 .faq .faq-item.faq-active .faq-header .faq-toggle i.bi-dash {
   opacity: 1;
   transform: rotate(0deg);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--verde-color);
 }
 
 .faq .faq-item.faq-active .faq-content {
   grid-template-rows: 1fr;
   visibility: visible;
   opacity: 1;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--verde-color);
 }
 
 .faq .faq-item:not(.faq-active) .faq-header .faq-toggle i.bi-plus {
   opacity: 1;
   transform: rotate(0deg);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--verde-color);
 }
 
 .faq .faq-item:not(.faq-active) .faq-header .faq-toggle i.bi-dash {
   opacity: 0;
   transform: rotate(-90deg);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--verde-color);
+
 }
 
 .faq .faq-item .faq-header {
@@ -2916,10 +3036,9 @@ section,
 }
 
 .contact .info-panel {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 48px;
+  padding: 30px;
   background: var(--accent-color);
   /* border-radius: 24px; */
   color: var(--contrast-color);
@@ -5293,3 +5412,7 @@ p {
 .gslide-image img {
   border-radius: 10px;
 }
+
+
+
+
