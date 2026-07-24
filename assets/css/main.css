@@ -2005,8 +2005,9 @@ section,
   scroll-margin-top: 87px;
 }
 .convenios h4 {
-  color: var(--cinza-color);
-  padding-bottom: 10px;
+  color: var(--verde-claro-color);
+  padding-bottom: 20px;
+  font-weight: 400;
 }
 .convenios {
   position: relative; /* necessário para os pseudo-elementos se posicionarem */
@@ -3004,6 +3005,7 @@ section,
 .contact {
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .contact::before {
@@ -3040,10 +3042,12 @@ section,
   flex-direction: column;
   padding: 30px;
   background: var(--accent-color);
-  /* border-radius: 24px; */
   color: var(--contrast-color);
   position: relative;
   overflow: hidden;
+  /* justify-content: center;  centraliza o conteúdo na altura toda */
+  height: 100%;             /* preenche toda a coluna */
+  min-height: 100%;
 }
 
 .contact .info-panel::before {
