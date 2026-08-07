@@ -1983,6 +1983,7 @@ section,
 
 .convenios .swiper-wrapper {
   height: auto;
+  transition-timing-function: linear !important;
 }
 
 .convenios .swiper-pagination {
