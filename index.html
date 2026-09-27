@@ -64,16 +64,21 @@
               <li><a href="#contato">Fale conosco</a></li>
             </ul>
           </li>
+
           <li><a href="#especialidades">Especialidades</a></li>
-          <li><a href="#exames">Exames</a></li>
-          <li><a href="#planos">Resultados</a></li>
-          <li><a href="#convenios">Convênios</a></li>
+          
+          <li class="dropdown"><a href="#"><span>Resultados de exames</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="https://secure.logicsolutions.com.br/" target="_blank"> Resultados da clínica <i class="bi bi-box-arrow-up-right"></i> </a></li>
+              <li><a href="https://www.babyclick.com.br/login" target="_blank"> Resultados BabyClick <i class="bi bi-box-arrow-up-right"></i> </a></li>
+            </ul>
+          </li>   
+          <li><a class="glightbox" href="convenios.html" data-glightbox="type: external; width:50vw; height:65vh;">Convênios</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted glightbox" href="contato.html"
-        data-glightbox="type: external; width:85vw; height:85vh;"><i class="bi bi-headset"></i> Contato</a>
+      <a class="btn-getstarted glightbox" href="info.html" data-glightbox="type: external; width:85vw; height:85vh;"><i class="bi bi-info-circle"></i> Informações</a>
 
     </div>
   </header>
@@ -100,14 +105,10 @@
           <div class="row justify-content-center text-center">
             <div class="col-lg-8">
               <h1 data-aos="fade-up" data-aos-delay="100">Diagnóstico, cuidado e prevenção</h1>
-              <h3 data-aos="fade-up" data-aos-delay="200">Clínica Médica e de exames, com vários profissionais de
-                diferentes especialidades!</h3>
+              <h3 data-aos="fade-up" data-aos-delay="200">Clínica Médica e de exames, com vários profissionais de diferentes especialidades!</h3>
               <div class="hero-buttons pt-4" data-aos="fade-up" data-aos-delay="300">
-                <!-- <a href="#hero2" class="btn btn-primary">Conheça nossas soluções</a> -->
-                <a href="#" class="btn btn-outline glightbox" data-glightbox="type: external; width:300px; height:200px;" target="_blank"><i
-                    class="bi bi-file-earmark-medical pe-2"></i>Resultados de exames</a>
-                <a href="https://portal.stenci.app/secure" class="btn btn-outline" target="_blank"><i
-                    class="bi bi-calendar-check pe-2"></i>Agendamento on-line</a>
+                <a href="resultados.html" class="btn btn-outline glightbox" data-glightbox="type: external; width:400px; height:350px;" target="_blank"><i class="bi bi-file-earmark-medical pe-2"></i>Resultados de exames</a>
+                <a href="https://portal.stenci.app/secure" class="btn btn-outline" target="_blank"><i class="bi bi-calendar-check pe-2"></i>Agendamento on-line</a>
               </div>
             </div>
           </div>
@@ -1136,14 +1137,15 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background hide">
+  <footer id="footer" class="footer dark-background">
 
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo-header-branco.png" alt="Logo" class="img-fluid mb-3" loading="lazy" style="max-width: 200px;">
+         <!-- <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename">Lawyer ©</span>
-          </a>
+          </a> -->
           <p>Site para escritório experimental.</p>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -1154,9 +1156,9 @@
         </div>
 
         <div class="col-lg-4 col-6 footer-links">
-          <h4>Links importantes</h4>
+          <h4>Corpo médico:</h4>
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="#">Dr. João (CRM 12345)</a></li>
             <li><a href="#">Sobre nós</a></li>
             <li><a href="#">Serviços</a></li>
             <li><a href="#">Termos de servicos</a></li>
@@ -1164,7 +1166,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start hide">
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>A108 Adam Street</p>
           <p>New York, NY 535022</p>
@@ -1185,6 +1187,37 @@
     </div>
 
   </footer>
+
+
+
+  <!-- Cookie Consent by Osano -->
+  <link href="assets/css/cookieconsent.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        palette: {
+          popup: {
+            /* background: "#101a20" */
+            background: "rgba(0,0,0,.8)"
+          },
+          button: {
+            background: "#1387c1"
+          }
+        },
+        theme: "classic",
+        position: "bottom",
+        content: {
+          message: "Utilizamos cookies para melhorar sua experiência de navegação.",
+          dismiss: "Aceitar",
+          link: "Saiba mais",
+          href: "/politica-de-cookies.html"
+        }
+      })
+    });
+  </script>
+
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i

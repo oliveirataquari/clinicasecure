@@ -19,7 +19,6 @@
   --heading-font: "Montserrat",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
   */
-
   --default-font: "Google Sans", sans-serif;
   --heading-font: "Google Sans", sans-serif;
 	--nav-font: "Google Sans", sans-serif;
@@ -38,7 +37,6 @@
   --verde-color: #094F07;
   --verde-claro-color: #01DF1A;
   --cinza-color: #A7A6A9;
-  
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -221,14 +219,14 @@ h1,h2 {
 
 .scrolled .header {
   isolation: isolate;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
 .scrolled .header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   pointer-events: none;
@@ -266,6 +264,8 @@ h1,h2 {
   transition: 0.5s;
   /* margin: 10px; */
   animation: fadeInUp 1s both 0.4s;
+  /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4); */
+  box-shadow: 0px 0px 30px var(--verde-claro-color);
 }
 .btn-getstarted i {
   margin-right: 6px;
@@ -274,7 +274,35 @@ h1,h2 {
 .btn-getstarted:hover {
   background:#01BA18;
   color:#000;
+  box-shadow: 0px 0px 15px var(--verde-claro-color);
 }
+.scrolled .btn-getstarted {
+  box-shadow: none !important;
+}
+
+
+.btn-consultation {
+  color: #000;
+  /* background: var(--accent-color);
+  font-family: var(--heading-font); */
+  font-weight: 600 !important;
+  font-size: 15px; 
+  background: var(--verde-claro-color);
+  display: inline-block;
+  padding: 15px 20px;
+  border-radius: 25px;
+  transition: 0.5s;
+  animation: fadeInUp 1s both 0.4s;
+}
+.btn-consultation i {
+  margin-right: 6px;
+}
+.btn-consultation:hover {
+  background:#098a18;
+  color:#000;
+}
+
+
 
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
@@ -303,7 +331,7 @@ h1,h2 {
     font-weight: 500;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -322,6 +350,7 @@ h1,h2 {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
+    margin-right: 5px;
     transition: 0.3s;
   }
 
@@ -346,9 +375,9 @@ h1,h2 {
     top: 130%;
     opacity: 0;
     transition: 0.3s;
-    border-radius: 4px;
+    border-radius: 6px;
     z-index: 99;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
   }
 
   .navmenu .dropdown ul li {
@@ -531,8 +560,7 @@ h1,h2 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
-  background-color: var(--red-color);
+  background-color: var(--verde-color);
   font-size: 14px;
   padding-bottom: 50px;
   position: relative;
@@ -1780,7 +1808,15 @@ section,
   /* background-color: color-mix(in srgb, var(--background-color), var(--accent-color) 2%);
   background-color: #222; */
   /* background: radial-gradient(circle, var(--verde-color) 0%, #111 100%); */
-  background: var(--verde-color) url("../img/bg-estrutura1.png") no-repeat top left;
+  background: var(--verde-color) url("../img/bg-estrutura1.png") no-repeat top left; 
+ /* background: radial-gradient(
+    ellipse at 65% 50%,
+    #075f0b 0%,
+    #045008 30%,
+    #023c05 55%,
+    #012b03 78%,
+    #001e02 100%
+); */
   padding: 100px 0;
 }
 
