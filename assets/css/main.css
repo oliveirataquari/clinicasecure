@@ -41,7 +41,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #cccccc;  /* The default color of the main navmenu links */
+  --nav-color: #01DF1A;  /* The default color of the main navmenu links */
   --nav-hover-color: #fff; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -337,12 +337,12 @@ h1,h2 {
   }
   .scrolled .navmenu a,
   .navmenu a:focus {
-    color:#555;
+    color:var(--verde-color);
   }
   .scrolled .navmenu li:hover>a,
   .scrolled .navmenu .active,
   .scrolled .navmenu .active:focus {
-    color:var(--verde-color);
+    color:#000;
   }
 
   .navmenu a i,
@@ -1285,7 +1285,7 @@ section,
   .hero-video .scroll-indicator {
       position: absolute;
       left: 50%;
-      bottom: 18px;
+      bottom: 100px;
       transform: translateX(-50%);
       z-index: 10;
       color: var(--verde-claro-color);
@@ -5455,5 +5455,15 @@ p {
 }
 
 
+/* Convênios (modal) */
 
+.itens-convenios h3 {
+  border-bottom: solid 1px #333;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
 
+.itens-convenios p {
+  border-bottom: solid 1px #ccc;
+  padding-bottom: 5px;
+}
