@@ -569,13 +569,14 @@ h1,h2 {
 .footer {
   color: var(--default-color);
   background-color: var(--verde-color);
+  background:var(--verde-color) url(../img/bg-footer.png) no-repeat top right;
   font-size: 14px;
   padding-bottom: 50px;
   position: relative;
 }
 
 .footer .footer-top {
-  padding-top: 50px;
+  padding-top: 80px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
@@ -626,6 +627,7 @@ h1,h2 {
   font-weight: 400;
   position: relative;
   padding-bottom: 12px;
+  text-decoration: underline;
 }
 
 .footer .footer-links {
@@ -669,10 +671,10 @@ h1,h2 {
 }
 
 .footer .copyright {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-}
+  /*padding-top: 25px;
+  padding-bottom: 25px; 
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%); */
+} 
 
 .footer .copyright p {
   margin-bottom: 0;
