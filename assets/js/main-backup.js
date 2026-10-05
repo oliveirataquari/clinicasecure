@@ -117,31 +117,6 @@
   new PureCounter();
 
   /**
-   * Iguala a altura dos cards de cada linha (layout fitRows do Isotope)
-   * Retorna true se alguma altura mudou.
-   */
-  function equalizeIsotopeCards(container) {
-    const items = Array.from(container.querySelectorAll('.isotope-item'))
-      .filter(el => el.style.display !== 'none');
-    if (!items.length) return false;
-
-    const cards = items.map(el => el.querySelector('.portfolio-card') || el.firstElementChild);
-    const before = cards.map(c => c.style.minHeight).join();
-
-    cards.forEach(c => c.style.minHeight = '');
-
-    // quantos cards cabem por linha no breakpoint atual
-    const perRow = Math.max(1, Math.round(container.clientWidth / items[0].offsetWidth));
-    for (let i = 0; i < cards.length; i += perRow) {
-      const row = cards.slice(i, i + perRow);
-      const max = Math.max(...row.map(c => c.offsetHeight));
-      row.forEach(c => c.style.minHeight = max + 'px');
-    }
-
-    return before !== cards.map(c => c.style.minHeight).join();
-  }
-
-  /**
    * Init isotope layout and filters
    */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
@@ -151,37 +126,12 @@
 
     let initIsotope;
     imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      const isotopeContainer = isotopeItem.querySelector('.isotope-container');
-
-      // nivela a altura dos cards antes do Isotope posicionar os itens
-      if (layout === 'fitRows') {
-        equalizeIsotopeCards(isotopeContainer);
-      }
-
-      initIsotope = new Isotope(isotopeContainer, {
+      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
         sortBy: sort
       });
-
-      if (layout === 'fitRows') {
-        const relayout = function() {
-          if (equalizeIsotopeCards(isotopeContainer)) {
-            initIsotope.layout();
-          }
-        };
-
-        // reaplica depois de filtrar/ordenar
-        initIsotope.on('arrangeComplete', relayout);
-
-        // reaplica ao redimensionar a janela
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(relayout, 150);
-        });
-      }
     });
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
