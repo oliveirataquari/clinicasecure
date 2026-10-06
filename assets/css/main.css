@@ -3286,7 +3286,7 @@ section,
 .contact .info-panel {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 10px 20px;
   background: var(--accent-color);
   color: var(--contrast-color);
   position: relative;

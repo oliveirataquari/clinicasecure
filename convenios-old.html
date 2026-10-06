@@ -30,23 +30,6 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- Busca de convênios (CSS isolado; pode ir para o main.css) -->
-  <style>
-    .busca-convenios { max-width: 560px; }
-    .busca-convenios-wrap + .itens-convenios { padding-top: 1.5rem !important; }
-    .busca-campo { position: relative; }
-    .busca-campo .bi-search { position: absolute; left: 1.15rem; top: 50%; transform: translateY(-50%); opacity: .55; pointer-events: none; }
-    .busca-campo input { width: 100%; padding: .85rem 3rem .85rem 2.9rem; font: inherit; font-size: 1rem; color: #222; background: #fff; border: 1px solid #cfd6d4; border-radius: 50px; }
-    .busca-campo input::-webkit-search-cancel-button { -webkit-appearance: none; }
-    .busca-campo input:focus { outline: 0; border-color: var(--verde-color, #1387c1); box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--verde-color, #1387c1) 25%, transparent); }
-    .busca-campo button { position: absolute; right: .6rem; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; padding: 0; font-size: 1.3rem; color: #555; background: transparent; border: 0; border-radius: 50%; cursor: pointer; }
-    .busca-campo button:hover { background: rgba(0, 0, 0, .07); }
-    .busca-campo button[hidden] { display: none; }
-    .busca-status { min-height: 1.4em; margin: .6rem 0 0; font-size: .9rem; color: #5b6663; }
-    .busca-vazio { padding: 1.5rem 0 0; }
-    .busca-vazio[hidden] { display: none; }
-  </style>
-
 
 </head>
 
@@ -61,7 +44,7 @@
 
         <div class="row">
 
-          <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <div class="col" data-aos="fade-up" data-aos-delay="200">
             <div class="info-panel">
               <div class="panel-header">
                 <h3>Nossos convênios:</h3>
@@ -69,23 +52,6 @@
               </div>
             </div>
           </div><!-- End Info Panel -->
-
-          <!-- Busca de convênios -->
-          <div class="busca-convenios-wrap px-5 pt-4 pb-0" data-aos="fade-up" data-aos-delay="200">
-            <form id="busca-form" class="busca-convenios" role="search" autocomplete="off">
-              <label for="busca-convenios" class="visually-hidden">Buscar convênio</label>
-              <div class="busca-campo">
-                <i class="bi bi-search" aria-hidden="true"></i>
-                <input type="search" id="busca-convenios" placeholder="Buscar convênio (ex.: unimed, amil)" enterkeyhint="search" spellcheck="false">
-                <button type="button" id="busca-limpar" aria-label="Limpar busca" hidden><i class="bi bi-x-lg" aria-hidden="true"></i></button>
-              </div>
-              <p id="busca-status" class="busca-status" role="status" aria-live="polite"></p>
-            </form>
-            <div id="busca-vazio" class="busca-vazio" role="status" hidden>
-              <p><strong>Nenhum convênio encontrado para “<span id="busca-termo"></span>”.</strong></p>
-              <p>Confira a grafia ou <a href="https://wa.me/5547999285354" target="_blank" rel="noopener">fale conosco pelo WhatsApp</a>.</p>
-            </div>
-          </div><!-- End Busca -->
 
           <div class="p-5 itens-convenios">
             <h3>Planos de saúde</h3>
@@ -207,66 +173,6 @@
     
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- Busca ao vivo de convênios -->
-  <script>
-    (function () {
-      var form = document.getElementById('busca-form');
-      var input = document.getElementById('busca-convenios');
-      var list = document.querySelector('#convenios .itens-convenios');
-      if (!form || !input || !list) return;
-
-      var clearBtn = document.getElementById('busca-limpar');
-      var status = document.getElementById('busca-status');
-      var empty = document.getElementById('busca-vazio');
-      var emptyTerm = document.getElementById('busca-termo');
-
-      // minúsculas e sem acento: "sul america" encontra "Sul América"
-      function normalize(str) {
-        return String(str || '').toLowerCase().normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
-      }
-
-      // agrupa: cada <h3> + os <p> que vêm depois dele
-      var groups = [], current = null;
-      Array.prototype.forEach.call(list.children, function (el) {
-        if (el.tagName === 'H3') { current = { title: el, items: [] }; groups.push(current); }
-        else if (el.tagName === 'P' && current) {
-          current.items.push({ el: el, text: normalize(el.textContent + ' ' + (el.getAttribute('data-keywords') || '')) });
-        }
-      });
-
-      function update() {
-        var raw = input.value;
-        var terms = normalize(raw).split(' ').filter(Boolean);
-        var total = 0;
-
-        groups.forEach(function (g) {
-          var visible = 0;
-          g.items.forEach(function (it) {
-            var ok = terms.every(function (t) { return it.text.indexOf(t) !== -1; });
-            it.el.hidden = !ok;
-            if (ok) visible++;
-          });
-          g.title.hidden = visible === 0;   // some o título se o grupo ficou vazio
-          total += visible;
-        });
-
-        clearBtn.hidden = raw === '';
-        empty.hidden = total !== 0;
-        emptyTerm.textContent = raw.trim();
-        if (!terms.length || total === 0) status.textContent = '';
-        else status.textContent = total === 1 ? '1 convênio encontrado' : total + ' convênios encontrados';
-      }
-
-      input.addEventListener('input', update);
-      input.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && input.value) { e.preventDefault(); input.value = ''; update(); }
-      });
-      clearBtn.addEventListener('click', function () { input.value = ''; update(); input.focus(); });
-      form.addEventListener('submit', function (e) { e.preventDefault(); input.blur(); });
-    })();
-  </script>
 
 </body>
 
