@@ -667,8 +667,14 @@ h1,h2 {
 }
 
 .footer .footer-contact p {
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }
+
+.footer p {
+  /* margin-bottom: 0.8rem; */
+  line-height: 22px !important;
+}
+
 
 .footer .copyright {
   /*padding-top: 25px;
@@ -677,7 +683,7 @@ h1,h2 {
 } 
 
 .footer .copyright p {
-  margin-bottom: 0;
+ /* margin-bottom: 0; */
 }
 
 .footer .credits {
@@ -2007,7 +2013,23 @@ section,
 
 
 /*--------------------------------------------------------------
-# Services Section
+# Services Section (Quem Somos - sobre.html)
+--------------------------------------------------------------*/
+.sobre {
+  padding: 120px 0;
+  background-color: var(--verde-color);
+}
+.sobre h1 {
+  color:#fff;
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Services Section (exames)
 --------------------------------------------------------------*/
 .exames {
   /* background-color: color-mix(in srgb, var(--background-color), var(--accent-color) 2%);
@@ -3849,6 +3871,23 @@ section,
 	color:#333;
 	opacity:.8
 }
+
+.portfolio .btn.btn-outline {
+  background-color: transparent;
+  color: var(--verde-color);
+  border-color: color-mix(in srgb, var(--verde-color), transparent 50%);
+  font-size: 1.1rem;
+  margin-left: 10px;
+  border-radius: 50px;
+}
+
+.portfolio .btn.btn-outline:hover {
+  border-color: #000;
+  color: #000;
+}
+
+
+
 .portfolio .portfolio-filters {
   display: flex;
   justify-content: center;
