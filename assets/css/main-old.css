@@ -1089,21 +1089,6 @@ section,
   z-index: 2;
 }
 
-/* Variação 50/50 (sobre.html): painel verde à esquerda, imagem à direita no desktop */
-@media (min-width: 992px) {
-  .hero-video .hero-background.hero-split {
-    background: var(--verde-color);
-  }
-  .hero-video .hero-background.hero-split img {
-    width: 50%;
-    margin-left: 50%;
-  }
-  .hero-video .hero-background.hero-split .hero-overlay {
-    left: 50%;
-    width: 50%;
-  }
-}
-
 
 
 
@@ -6487,21 +6472,6 @@ p { }
 }
 
 
-/* Tiago - Zoom da imagem no scroll (sobre.html) 
-.hero-video .hero-background.hero-split {
-  overflow: hidden; /* impede a imagem ampliada de vazar da área do hero ----
-}
 
-.hero-video .hero-background.hero-split img {
-  transform: scale(1);
-  transform-origin: center;
-  will-change: transform;
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-video .hero-background.hero-split img {
-    transform: none !important;
-  }
-}
-*/
 
