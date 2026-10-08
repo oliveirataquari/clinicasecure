@@ -735,8 +735,8 @@ h1,h2 {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
-  bottom: 15px;
+  right: 30px;
+  bottom: 90px;
   z-index: 99999;
   background-color: var(--accent-color);
   width: 40px;
@@ -6505,3 +6505,45 @@ p { }
 }
 */
 
+
+/* Botão WhatsApp (inferior flutuante) */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1050;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5a;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #25d366;
+  z-index: -1;
+  animation: pulse-wpp 2s infinite;
+}
+
+@keyframes pulse-wpp {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
