@@ -253,7 +253,7 @@
 
 
     <!-- About Section -->
-    <section id="about" class="about section hide">
+    <section id="about" class="about section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -326,7 +326,28 @@
 
         </div>
 
+
+
+<div class="row">
+    <div class="col-md-6">
+        <label for="checkin" class="form-label">Check-in</label>
+        <input type="date" id="checkin" class="form-control">
+    </div>
+
+    <div class="col-md-6">
+        <label for="checkout" class="form-label">Check-out</label>
+        <input type="date" id="checkout" class="form-control">
+    </div>
+</div>
+
+<button type="button" class="btn btn-success mt-3" onclick="enviarWhatsApp()">
+    <i class="bi bi-whatsapp"></i> Consultar disponibilidade
+</button>
+
+
+
       </div>
+
 
     </section><!-- /About Section -->
 
@@ -1281,6 +1302,35 @@ Ser referência em qualidade de serviços de segurança e saúde do trabalho par
       })
     });
   </script>
+
+
+
+<!-- WhatsApp Button Script -->
+<script>
+
+function enviarWhatsApp() {
+
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+
+    if (!checkin || !checkout) {
+        alert("Informe as datas de entrada e saída.");
+        return;
+    }
+
+    const mensagem =
+        `Olá! Gostaria de consultar a disponibilidade para hospedagem.%0A%0A` +
+        `Check-in: ${checkin}%0A` +
+        `Check-out: ${checkout}`;
+
+    window.open(
+        `https://wa.me/555197078479?text=${mensagem}`,
+        "_blank"
+    );
+}
+
+</script>
+
 
 
 
