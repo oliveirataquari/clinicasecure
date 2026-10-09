@@ -71,6 +71,15 @@
   scroll-behavior: smooth;
 }
 
+/* Gradiente padrão */
+.gradiente-radial-1 {
+  background: radial-gradient(circle, #6ede43 0%, #054d04 100%);
+}
+.gradiente-radial-2 {
+  background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
+}
+
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
@@ -170,6 +179,13 @@ h1,h2 {
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
+}
+
+.header-green {
+    background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
+}
+.header-green .navmenu a {
+  color:#fff;
 }
 
 .header .logo {
@@ -343,6 +359,7 @@ h1,h2 {
     white-space: nowrap;
     transition: 0.3s;
   }
+
   .scrolled .navmenu a,
   .navmenu a:hover {
     color:var(--verde-color);
@@ -570,6 +587,7 @@ h1,h2 {
   color: var(--default-color);
   background-color: var(--verde-color);
   background:var(--verde-color) url(../img/bg-footer.png) no-repeat top right;
+  background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
   font-size: 14px;
   padding-bottom: 50px;
   position: relative;
@@ -1056,7 +1074,9 @@ section,
   width: 100%;
   height:100%;
   /* background: color-mix(in srgb, #094F07, transparent 20%); */
-  background: color-mix(in srgb, #000, transparent 30%);
+   background: color-mix(in srgb, #000, transparent 30%); 
+  /* background: color-mix(in srgb, #094F07, transparent 20%); */
+  /* background: radial-gradient(circle,rgb(0,0,0,.7) 0%, #05350391 100%); */
   z-index: 2;
 }
 
@@ -1093,6 +1113,7 @@ section,
 @media (min-width: 992px) {
   .hero-video .hero-background.hero-split {
     background: var(--verde-color);
+    background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
   }
   .hero-video .hero-background.hero-split img {
     width: 50%;
@@ -1875,7 +1896,7 @@ section,
   /* background-color: color-mix(in srgb, var(--background-color), var(--accent-color) 2%);
   background-color: #222; */
   /* background: radial-gradient(circle, var(--verde-color) 0%, #111 100%); */
-  background: var(--verde-color) url("../img/bg-estrutura1.png") no-repeat top left; 
+    background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
  /* background: radial-gradient(
     ellipse at 65% 50%,
     #075f0b 0%,
@@ -2280,10 +2301,10 @@ section,
 # Clients Section (Convênios)
 --------------------------------------------------------------*/
 .convenios {
-  background-color: var(--verde-color);
+  background-color: var(--verde-color); 
   color: #fff;
   padding: 100px 0;
-  padding-top: 1px;
+  padding-top: 50px;
 }
 
 .convenios .swiper-slide img {
@@ -4184,7 +4205,6 @@ section,
 .portfolio2 .portfolio-card .portfolio-img {
   position: relative;
   overflow: hidden;
-  display: none; /* Oculta imagens */
 }
 
 .portfolio2 .portfolio-card .portfolio-img img {
