@@ -43,6 +43,7 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #01DF1A;  /* The default color of the main navmenu links */
+  --nav-color: #ccc;  /* The default color of the main navmenu links */
   --nav-hover-color: #fff; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -76,7 +77,11 @@
   background: radial-gradient(circle, #6ede43 0%, #054d04 100%);
 }
 .gradiente-radial-2 {
-  background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
+  /* Verde 
+  background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%); */
+
+  /* Cinza usado no header navmenu */
+  background: radial-gradient(circle, #555 0%, #4b4b4b 100%);
 }
 
 
@@ -184,9 +189,15 @@ h1,h2 {
 .header-green {
     background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
 }
-.header-green .navmenu a {
-  color:#fff;
+.header-green .navmenu a { }
+
+.header-gray {
+    background: radial-gradient(circle, #2b2b2b 0%, #555 100%);
 }
+.header-gray .navmenu a { }
+
+
+
 
 .header .logo {
   line-height: 1;
@@ -277,13 +288,13 @@ h1,h2 {
 }
 
 .btn-getstarted {
-  color: #000;
-  /* background: var(--accent-color);
+  color: var(--verde-claro-color);
+  background: transparent;
   font-family: var(--heading-font); */
   font-weight: 500;
   font-size: 15px; 
   letter-spacing: 1px;
-  background: var(--verde-claro-color);
+  /* background: var(--verde-claro-color); */
   display: inline-block;
   padding: 7px 20px;
   border-radius: 25px;
@@ -291,20 +302,28 @@ h1,h2 {
   /* margin: 10px; */
   animation: fadeInUp 1s both 0.4s;
   /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4); */
-  box-shadow: 0px 0px 30px var(--verde-claro-color);
+  /* box-shadow: 0px 0px 30px var(--verde-claro-color); */
+  border: 2px solid var(--verde-claro-color);
 }
 .btn-getstarted i {
   margin-right: 6px;
   /* color:#fff; */ 
 }
 .btn-getstarted:hover {
-  background:#01BA18;
-  color:#000;
+  color:var(--verde-claro-color);
   box-shadow: 0px 0px 15px var(--verde-claro-color);
 }
 .scrolled .btn-getstarted {
   box-shadow: none !important;
+  color:#fff;
+  background: var(--verde-color);
+  border: 2px solid var(--verde-color);
 }
+.scrolled .btn-getstarted:hover {
+  border: 2px solid #333;
+}
+
+
 
 .btn-consultation {
   color: #000;
