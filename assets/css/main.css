@@ -186,12 +186,12 @@ h1,h2 {
   z-index: 997;
 }
 
-.header-green {
+.bg-header {
     background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
 }
 .header-green .navmenu a { }
 
-.header-gray {
+.bg-gray {
     background: radial-gradient(circle, #2b2b2b 0%, #555 100%);
 }
 .header-gray .navmenu a { }
@@ -311,16 +311,17 @@ h1,h2 {
 }
 .btn-getstarted:hover {
   color:var(--verde-claro-color);
-  box-shadow: 0px 0px 15px var(--verde-claro-color);
+  box-shadow: 0px 0px 10px var(--verde-claro-color);
 }
 .scrolled .btn-getstarted {
-  box-shadow: none !important;
+  box-shadow: none;
   color:#fff;
   background: var(--verde-color);
   border: 2px solid var(--verde-color);
 }
 .scrolled .btn-getstarted:hover {
-  border: 2px solid #333;
+  box-shadow: 0px 0px 20px var(--verde-claro-color) !important;
+  color: var(--verde-claro-color);
 }
 
 
@@ -381,11 +382,10 @@ h1,h2 {
 
   .scrolled .navmenu a,
   .navmenu a:hover {
-    color:var(--verde-color);
+    color:var(--verde-color2);
   }
   .scrolled .navmenu li:hover>a,
-  
-  .scrolled .navmenu .active:focus {
+    .scrolled .navmenu .active:focus {
     color:#000;
   }
 
@@ -604,13 +604,22 @@ h1,h2 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--verde-color);
-  background:var(--verde-color) url(../img/bg-footer.png) no-repeat top right;
-  background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
+  /* background-color: var(--verde-color); */
+  /* background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%); */
+  /* background: radial-gradient(circle, #555 0%, #333 100%); */
+  background:
+  url(../img/bg-footer-cross1.png) no-repeat top right,
+  radial-gradient(circle, #555 0%, #333 100%);
   font-size: 14px;
   padding-bottom: 50px;
   position: relative;
 }
+
+.footer i {
+  margin-right: 6px;
+  opacity: .5;
+}
+
 
 .footer .footer-top {
   padding-top: 80px;
@@ -2320,10 +2329,10 @@ section,
 # Clients Section (Convênios)
 --------------------------------------------------------------*/
 .convenios {
-  background-color: var(--verde-color); 
+  background: radial-gradient(circle, var(--verde-color2) 0%, #054d04 100%);
   color: #fff;
   padding: 100px 0;
-  padding-top: 50px;
+  
 }
 
 .convenios .swiper-slide img {
@@ -2361,11 +2370,14 @@ section,
 .convenios {
   scroll-margin-top: 87px;
 }
-.convenios h4 {
-  color: var(--verde-claro-color);
-  padding-bottom: 20px;
-  font-weight: 400;
+.convenios h2, .convenios p  {
+  color: #fff;
 }
+
+.convenios p {
+  opacity: 0.8;
+}
+
 .convenios {
   position: relative; /* necessário para os pseudo-elementos se posicionarem */
 }
@@ -2386,23 +2398,23 @@ section,
   pointer-events: none; /* para não bloquear cliques/drag no carousel */
 }
 
+/* 
 .convenios .swiper::before {
   left: 0;
   background: linear-gradient(
     to right,
-    var(--verde-color) 0%,      /* cor sólida igual ao fundo */
+    var(--verde-color) 0%,      
     rgba(10, 61, 26, 0) 100%
   );
 }
-
-.convenios .swiper::after {
+ .convenios .swiper::after {
   right: 0;
   background: linear-gradient(
     to left,
     var(--verde-color) 0%,
     rgba(10, 61, 26, 0) 100%
   );
-}
+} */
 
 
 
@@ -2504,12 +2516,17 @@ section,
   height: 70px;
   border-radius: 50%;
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
+  color: var(--verde-color);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;
   transition: all 0.4s ease-in-out;
+}
+
+
+.why-us .icon-wrapper i {
+  color: var(--verde-color);
 }
 
 @media (max-width: 768px) {
@@ -2896,6 +2913,7 @@ section,
   margin-bottom: 15px;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display:none !important; 
 }
 
 .testimonials .testimonial-header .rating {
@@ -3969,13 +3987,19 @@ section,
   margin-left: 10px;
   border-radius: 50px;
 }
-
 .portfolio .btn.btn-outline:hover {
   border-color: #000;
   color: #000;
 }
 
-
+.portfolio .link {
+  color: var(--verde-color);
+  text-decoration: none;
+}
+.portfolio .link:hover {
+  color: #000;
+  text-decoration: underline;
+}
 
 .portfolio .portfolio-filters {
   display: flex;

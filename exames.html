@@ -32,6 +32,23 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Busca de exames (CSS isolado; pode ir para o main.css) -->
+  <style>
+    .busca-especialidades { max-width: 560px; margin: 0 auto 2.5rem; }
+    .busca-campo { position: relative; }
+    .busca-campo .bi-search { position: absolute; left: 1.15rem; top: 50%; transform: translateY(-50%); opacity: .55; pointer-events: none; }
+    .busca-campo input { width: 100%; padding: .85rem 3rem .85rem 2.9rem; font: inherit; font-size: 1rem; color: #222; background: #fff; border: 1px solid #cfd6d4; border-radius: 50px; }
+    .busca-campo input::-webkit-search-cancel-button { -webkit-appearance: none; }
+    .busca-campo input:focus { outline: 0; border-color: var(--verde-color, #1387c1); box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--verde-color, #1387c1) 25%, transparent); }
+    .busca-campo button { position: absolute; right: .6rem; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; padding: 0; font-size: 1.3rem; color: #555; background: transparent; border: 0; border-radius: 50%; cursor: pointer; }
+    .busca-campo button:hover { background: rgba(0, 0, 0, .07); }
+    .busca-campo button[hidden] { display: none; }
+    .busca-status { min-height: 1.4em; margin: .6rem 0 0; font-size: .9rem; text-align: center; color: #5b6663; }
+    .busca-vazio { padding: 1.5rem 1rem 0; text-align: center; }
+    .busca-vazio[hidden] { display: none; }
+  </style>
+
+
   <!-- =======================================================
   * Template Name: Axis
   * Template URL: https://bootstrapmade.com/axis-bootstrap-corporate-template/
@@ -43,7 +60,7 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top header-gray">
+  <header id="header" class="header d-flex align-items-center fixed-top bg-header">
 
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
@@ -134,14 +151,28 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Nossos Exames</h2>
         <p>Na Secure, você encontra exames que auxiliam na prevenção, no diagnóstico e no acompanhamento da sua saúde.
-          Nossa estrutura reúne diferentes procedimentos em um só lugar. <a href="#" class="btn btn-outline">Agende o seu exame!</a></p>
+          Nossa estrutura reúne diferentes procedimentos em um só lugar. <a href="https://portal.stenci.app/secure" target="_blank" class="btn link">Agende o seu exame! <i class="bi bi-box-arrow-up-right"></i></a></p>
+
           
       </div><!-- End Section Title -->
+      <!-- Busca de exames -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <form id="busca-form" class="busca-especialidades" role="search" autocomplete="off">
+          <label for="busca-exames" class="visually-hidden">Buscar exame</label>
+          <div class="busca-campo">
+            <i class="bi bi-search" aria-hidden="true"></i>
+            <input type="search" id="busca-exames" placeholder="Buscar exame (ex.: raio-x, coração, ultrassom)" enterkeyhint="search" spellcheck="false">
+            <button type="button" id="busca-limpar" aria-label="Limpar busca" hidden><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+          </div>
+          <p id="busca-status" class="busca-status" role="status" aria-live="polite"></p>
+        </form>
+      </div><!-- End Busca -->
+
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <!-- <div class="isotope-layout" data-default-filter=".filter-recentes" data-layout="fitRows" data-sort="original-order"> -->
         <div class="isotope-layout" data-default-filter="*" data-layout="fitRows" data-sort="original-order">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+          <ul class="portfolio-filters isotope-filters hide" data-aos="fade-up" data-aos-delay="200">
             <li data-filter="*" class="filter-active"><i class="bi bi-border-all" style="margin-right: 5px;"></i> Todos
             </li>
             <li data-filter=".filter-fono">Fonoaudiológicos</li>
@@ -155,7 +186,7 @@
 
 
             <!-- Audiometria -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-fono">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-fono" data-keywords="audição ouvido surdez auditivo fonoaudiologia">
               <div class="portfolio-card">
                 <div class="portfolio-img">
                   <img src="assets/img/exames/exame-audiometria.jpg" alt="Portfolio Item" class="img-fluid">
@@ -169,15 +200,14 @@
                   <h4>Audiometria</h4>
                   <p>A audiometria avalia a capacidade auditiva do paciente. Realizada por um fonoaudiólogo, consiste em
                     testes feitos em uma cabine acústica, com o resultado apresentado em um audiograma.</p>
-                  <p><b>Procedimentos pré-exame:</b><br /><i class="bi bi-check-square"></i> Repouso acústico de 14
-                    horas.</p>
+                  <!-- <p><b>Procedimentos pré-exame:</b><br /><i class="bi bi-check-square"></i> Repouso acústico de 14 horas.</p> -->
                 </div>
               </div>
             </div>
 
 
             <!-- Acuidade Visual -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-visual">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-visual" data-keywords="visão vista olhos oftalmologia grau óculos">
               <div class="portfolio-card">
                 <div class="portfolio-img">
                   <img src="assets/img/exames/exame-acuidade-visual.jpg" alt="Portfolio Item" class="img-fluid">
@@ -190,14 +220,14 @@
                 <div class="portfolio-info">
                   <h4>Acuidade Visual</h4>
                   <p>A acuidade visual avalia a clareza da visão e a capacidade de enxergar detalhes com nitidez.</p>
-                  <p><b>Procedimentos pré-exame:</b><br /><i class="bi bi-check-square"></i> Levar óculos caso use.</p>
+                  <!-- <p><b>Procedimentos pré-exame:</b><br /><i class="bi bi-check-square"></i> Levar óculos caso use.</p> -->
                 </div>
               </div>
             </div>
 
 
             <!-- Ecocardiograma  -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cooperativa filter-imagem filter-cardio">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cooperativa filter-imagem filter-cardio" data-keywords="coração cardíaco eco válvulas cardiologia">
               <div class="portfolio-card">
                 <div class="portfolio-img">
                   <img src="assets/img/exames/exame-ecocardiograma.jpg" alt="Portfolio Item" class="img-fluid">
@@ -216,8 +246,36 @@
             </div>
 
 
+            <!-- Eletrocardiograma (ECG) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-imagem filter-imagem" data-keywords="coração cardíaco ritmo arritmia eletro cardiologia">
+              <div class="portfolio-card">
+                <div class="portfolio-img">
+                  <img src="assets/img/exames/exame-ecg.jpg" alt="Portfolio Item" class="img-fluid">
+                  <div class="portfolio-overlay">
+                    <a href="https://www.google.com/search?q=exame%20eletrocardiograma" target="_blank"><i
+                        class="bi bi-box-arrow-up-right"></i></a>
+                    <p class="overlay-text">Saiba mais</p>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Eletrocardiograma (ECG)</h4>
+                  <p>O eletrocardiograma é um exame que registra a atividade elétrica do coração, ajudando a diagnosticar problemas cardíacos.</p>
+                  <!--
+                  <p><b>Procedimentos pré-exame:</b><br />
+                    <i class="bi bi-check-square"></i> Jejum de 8 horas.<br />
+                    <i class="bi bi-check-square"></i> 6 horas antes não beber água.<br />
+                    <i class="bi bi-check-square"></i> Trazer 1 toalha de rosto.<br />
+                    <i class="bi bi-check-square"></i> Ter um acompanhante.<br />
+                    <i class="bi bi-check-square"></i> Não usar esmalte nas unhas da mão.
+                  </p>
+                  -->
+                </div>
+              </div>
+            </div>
+
+
             <!-- Endoscopia Digestiva Alta (EDA) -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-imagem filter-imagem">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-imagem filter-imagem" data-keywords="estômago esôfago gastrite refluxo digestivo">
               <div class="portfolio-card">
                 <div class="portfolio-img">
                   <img src="assets/img/exames/exame-eda.jpg" alt="Portfolio Item" class="img-fluid">
@@ -231,20 +289,21 @@
                   <h4>Endoscopia Digestiva Alta (EDA)</h4>
                   <p>A endoscopia digestiva alta utiliza um endoscópio para visualizar o trato digestivo, permitindo
                     identificar alterações e auxiliar no diagnóstico e tratamento de doenças.</p>
-                  <p><b>Procedimentos pré-exame:</b><br />
+                  <!-- <p><b>Procedimentos pré-exame:</b><br />
                     <i class="bi bi-check-square"></i> Jejum de 8 horas.<br />
                     <i class="bi bi-check-square"></i> 6 horas antes não beber água.<br />
                     <i class="bi bi-check-square"></i> Trazer 1 toalha de rosto.<br />
                     <i class="bi bi-check-square"></i> Ter um acompanhante.<br />
                     <i class="bi bi-check-square"></i> Não usar esmalte nas unhas da mão.
-                  </p>
+                  </p> 
+                -->
                 </div>
               </div>
             </div>
 
 
             <!-- Mapa cardiológico de pressão arterial / Holter -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cardio">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cardio" data-keywords="pressão alta hipertensão coração 24 horas monitoramento">
               <div class="portfolio-card">
                 <div class="portfolio-img">
                   <img src="assets/img/exames/exame-mcpah.jpg" alt="Portfolio Item" class="img-fluid">
@@ -258,24 +317,44 @@
                   <h4>Mapa cardiológico de pressão arterial / Holter</h4>
                   <p>A MAPA monitora a pressão arterial durante 24 horas, realizando medições automáticas a cada 15 ou
                     20 minutos e registrando os resultados.</p>
-                  <p><b>Procedimentos pré-exame:</b><br />
+                  <!-- <p><b>Procedimentos pré-exame:</b><br />
                     <i class="bi bi-check-square"></i> Vir de banho tomado.<br />
                     <i class="bi bi-check-square"></i> Usar blusa confortável e larga nos braços.<br />
                     <i class="bi bi-check-square"></i> Trazer guia de encaminhamento.<br />
                     <i class="bi bi-check-square"></i> Trazer um cinto de calça comum.<br />
-                  </p>
+                  </p> -->
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Mamografia -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-imagem" data-keywords="mama seios câncer imagem mamografia">
+              <div class="portfolio-card">
+                <div class="portfolio-img">
+                  <img src="assets/img/exames/exame-mama.jpg" alt="Portfolio Item" class="img-fluid">
+                  <div class="portfolio-overlay">
+                    <a href="https://www.google.com/search?q=exame%20mamografia" target="_blank"><i
+                        class="bi bi-box-arrow-up-right"></i></a>
+                    <p class="overlay-text">Saiba mais</p>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Mamografia</h4>
+                  <p>A mamografia é um exame de imagem que utiliza raios-X para detectar alterações nas mamas, sendo
+                    fundamental na prevenção e diagnóstico precoce do câncer de mama.</p>
                 </div>
               </div>
             </div>
 
 
             <!-- Mapeamento cerebral / Eletroencefalograma (EEG) -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-neuro">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-neuro" data-keywords="cérebro neurologia convulsão epilepsia">
               <div class="portfolio-card">
                 <div class="portfolio-img">
                   <img src="assets/img/exames/exame-eeg.jpg" alt="Portfolio Item" class="img-fluid">
                   <div class="portfolio-overlay">
-                    <a href="https://www.google.com/search?q=mapeamento%20cerebral%eletroencefalograma%20EEG"
+                    <a href="https://www.google.com/search?q=mapeamento%20cerebral%20eletroencefalograma%20EEG"
                       target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
                     <p class="overlay-text">Saiba mais</p>
                   </div>
@@ -284,16 +363,16 @@
                   <h4>Mapeamento cerebral / Eletroencefalograma (EEG)</h4>
                   <p>O eletroencefalograma (EEG) registra a atividade elétrica do cérebro por meio de eletrodos
                     colocados no couro cabeludo, de forma não invasiva.</p>
-                  <p><b>Procedimentos pré-exame:</b><br />
+                <!-- <p><b>Procedimentos pré-exame:</b><br />
                     <i class="bi bi-check-square"></i> Vir com cabelo limpo e seco sem gel ou creme.<br />
-                  </p>
+                  </p> -->
                 </div>
               </div>
             </div>
 
 
             <!-- Teste Ergométrico -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cardio">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cardio" data-keywords="esteira esforço coração cardiologia">
               <div class="portfolio-card">
                 <div class="portfolio-img">
                   <img src="assets/img/exames/exame-ergo.jpg" alt="Portfolio Item" class="img-fluid">
@@ -307,7 +386,7 @@
                   <h4>Teste Ergométrico</h4>
                   <p>O teste ergométrico avalia o funcionamento do coração durante esforço físico, com acompanhamento
                     por eletrocardiograma e monitoramento dos batimentos cardíacos.</p>
-                  <p><b>Procedimentos pré-exame:</b><br />
+                 <!-- <p><b>Procedimentos pré-exame:</b><br />
                     <i class="bi bi-check-square"></i> No dia do exame, após o banho, não utilizar cremes, pomadas ou
                     gel.<br />
                     <i class="bi bi-check-square"></i> Estar com o torax totalmente depilado (homens).<br />
@@ -316,14 +395,34 @@
                     <i class="bi bi-check-square"></i> Não fumar 2 horas antes e 1 hora após o exame.<br />
                     <i class="bi bi-check-square"></i> Dieta normal 2 horas antes ou dieta leve 1 h antes do exame; o
                     paciente não deve fazer o exame em jejum.
-                  </p>
+                  </p> -->
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Raio-X-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-imagem" data-keywords="radiografia raio x raios-x imagem ossos">
+              <div class="portfolio-card">
+                <div class="portfolio-img">
+                  <img src="assets/img/exames/exame-raio-x.jpg" alt="Portfolio Item" class="img-fluid">
+                  <div class="portfolio-overlay">
+                    <a href="https://www.google.com/search?q=exame%20raio%20x" target="_blank"><i
+                        class="bi bi-box-arrow-up-right"></i></a>
+                    <p class="overlay-text">Saiba mais</p>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Raio-X</h4>
+                  <p>O exame de raio-X utiliza radiação para gerar imagens do interior do corpo, permitindo a avaliação de
+                    ossos, órgãos e tecidos.</p>
                 </div>
               </div>
             </div>
 
 
             <!-- Ultrassonografia geral e vascular com doppler -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-imagem">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-imagem" data-keywords="ultrassom usg doppler veias artérias imagem">
               <div class="portfolio-card">
                 <div class="portfolio-img">
                   <img src="assets/img/exames/exame-ultrassom.jpg" alt="Portfolio Item" class="img-fluid">
@@ -342,11 +441,37 @@
             </div>
 
 
+            <!-- Videolaringologia -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-fono" data-keywords="laringe garganta voz rouquidão">
+              <div class="portfolio-card">
+                <div class="portfolio-img">
+                  <img src="assets/img/exames/exame-videolar.jpg" alt="Portfolio Item" class="img-fluid">
+                  <div class="portfolio-overlay">
+                    <a href="https://www.google.com/search?q=exame%20videolaringologia" target="_blank"><i
+                        class="bi bi-box-arrow-up-right"></i></a>
+                    <p class="overlay-text">Saiba mais</p>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Videolaringologia</h4>
+                  <p>A videolaringologia é um exame que utiliza uma câmera para visualizar a laringe e as cordas vocais,
+                    permitindo avaliar a função vocal e identificar possíveis alterações.</p>
+                </div>
+              </div>
+            </div>
+
+
+
 
 
 
 
           </div><!-- End Portfolio Items Container -->
+          <div id="busca-vazio" class="busca-vazio" role="status" hidden>
+            <p><strong>Nenhum exame encontrado para “<span id="busca-termo"></span>”.</strong></p>
+            <p>Confira a grafia ou tente outro termo. Se preferir, <a href="https://wa.me/5547999285354" target="_blank" rel="noopener">fale conosco pelo WhatsApp</a>.</p>
+          </div>
+
 
         </div>
 
@@ -607,6 +732,82 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Busca ao vivo de exames -->
+  <script>
+    (function () {
+      var form = document.getElementById('busca-form');
+      var input = document.getElementById('busca-exames');
+      var container = document.querySelector('#portfolio .isotope-container');
+      if (!form || !input || !container) return;
+
+      var clearBtn = document.getElementById('busca-limpar');
+      var status = document.getElementById('busca-status');
+      var empty = document.getElementById('busca-vazio');
+      var emptyTerm = document.getElementById('busca-termo');
+      var items = Array.prototype.slice.call(container.querySelectorAll('.isotope-item'));
+      var texts = new Map();
+      var matched = new Map();
+
+      // minúsculas e sem acento: "clinico" encontra "Clínico"
+      function normalize(str) {
+        return String(str || '').toLowerCase().normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
+      }
+
+      // texto pesquisável de cada card: título + descrição + data-keywords
+      items.forEach(function (el) {
+        var title = el.querySelector('.portfolio-info h4');
+        var desc = el.querySelector('.portfolio-info p');
+        texts.set(el, normalize([
+          title ? title.textContent : '',
+          desc ? desc.textContent : '',
+          el.getAttribute('data-keywords')
+        ].join(' ')));
+      });
+
+      // instância do Isotope criada pelo main.js (se já existir)
+      function getIsotope() {
+        return window.Isotope && typeof Isotope.data === 'function' ? Isotope.data(container) : null;
+      }
+
+      function update() {
+        var raw = input.value;
+        var terms = normalize(raw).split(' ').filter(Boolean);
+        var total = 0;
+
+        items.forEach(function (el) {
+          var ok = terms.every(function (t) { return texts.get(el).indexOf(t) !== -1; });
+          matched.set(el, ok);
+          if (ok) total++;
+        });
+
+        var iso = getIsotope();
+        if (iso) {
+          items.forEach(function (el) { el.classList.remove('d-none'); });
+          iso.once('arrangeComplete', function () { if (window.AOS) AOS.refresh(); });
+          iso.arrange({ filter: function (el) { return matched.get(el); } });
+        } else {
+          items.forEach(function (el) { el.classList.toggle('d-none', !matched.get(el)); });
+        }
+
+        clearBtn.hidden = raw === '';
+        empty.hidden = total !== 0;
+        emptyTerm.textContent = raw.trim();
+        if (!terms.length || total === 0) status.textContent = '';
+        else status.textContent = total === 1 ? '1 exame encontrado' : total + ' exames encontrados';
+      }
+
+      input.addEventListener('input', update);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && input.value) { e.preventDefault(); input.value = ''; update(); }
+      });
+      clearBtn.addEventListener('click', function () { input.value = ''; update(); input.focus(); });
+      form.addEventListener('submit', function (e) { e.preventDefault(); input.blur(); });
+      window.addEventListener('load', function () { if (input.value) setTimeout(update, 400); });
+    })();
+  </script>
+
 
 
   <!-- Botão WhatsApp -->
