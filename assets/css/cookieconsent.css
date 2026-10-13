@@ -140,8 +140,6 @@
 }
 
 
-
-
 .cc-highlight .cc-btn:first-child {
     background-color: transparent;
     border-color: transparent
@@ -348,7 +346,7 @@ screen and (max-width:736px) and (orientation:landscape) {
 }
 
 .cc-theme-classic .cc-btn {
-    border-radius: 5px
+    border-radius: 25px
 }
 
 .cc-theme-classic .cc-btn:last-child {
@@ -388,11 +386,9 @@ screen and (max-width:736px) and (orientation:landscape) {
 
 /* Tiago */
 
-
 .cc-left {
     
 }
-
 
 .cc-window.cc-bottom {
 /*  padding: 0; */
@@ -413,8 +409,6 @@ screen and (max-width:736px) and (orientation:landscape) {
   text-align: center;
 }
 
-
-
 .cc-window.cc-banner {
   justify-content: center;
 }
@@ -427,6 +421,17 @@ screen and (max-width:736px) and (orientation:landscape) {
 .cc-compliance {
   margin-left: 10px;
 }
+
+.cc-btn.cc-dismiss {
+    border:1px solid #01DF1A;
+    color: #01DF1A
+}
+.cc-btn.cc-dismiss:hover {
+    border:1px solid #fff;
+    color: #fff;
+    background:transparent;
+}
+
 
 /*
 cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-1671922682 
