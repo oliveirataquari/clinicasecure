@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -52,7 +52,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -144,13 +144,13 @@
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+  document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
       const isotopeContainer = isotopeItem.querySelector('.isotope-container');
 
       // nivela a altura dos cards antes do Isotope posicionar os itens
@@ -166,7 +166,7 @@
       });
 
       if (layout === 'fitRows') {
-        const relayout = function() {
+        const relayout = function () {
           if (equalizeIsotopeCards(isotopeContainer)) {
             initIsotope.layout();
           }
@@ -177,15 +177,15 @@
 
         // reaplica ao redimensionar a janela
         let resizeTimer;
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
           clearTimeout(resizeTimer);
           resizeTimer = setTimeout(relayout, 150);
         });
       }
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+      filters.addEventListener('click', function () {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
@@ -203,7 +203,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -221,7 +221,7 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -257,11 +257,12 @@
     });
   });
 
-  
+
 
   /**
    * Galeria de imagens carousel (Add Tiago)
    */
+
   document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".myGallerySwiper", {
       loop: true,
@@ -270,6 +271,7 @@
         delay: 3000,
       },
       slidesPerView: 1,
+      slidesPerGroup: 1,
       spaceBetween: 20,
 
       navigation: {
@@ -279,12 +281,12 @@
 
       breakpoints: {
         768: {
-          slidesPerView: 1 /* Numero de slides na tela */
+          slidesPerView: 4,  // Imagens visíveis
+          slidesPerGroup: 4  // Imagens por avanço
         }
       }
     });
   });
-
 
 
 
